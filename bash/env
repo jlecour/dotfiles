@@ -1,0 +1,15 @@
+export PATH=/Developer/Tools:$PATH
+export PATH=/opt/ree/bin:$PATH
+# export PATH=/usr/local/git/bin/:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=~/bin:$PATH
+ 
+export MANPATH=/usr/local/man:$MANPATH
+export MANPATH=/opt/local/man:$MANPATH
+ 
+export SVN_EDITOR='mate -w'
+export GIT_EDITOR='mate -w'
+export DIFF_EDITOR='mate -w'
+export EDITOR='mate -w'
