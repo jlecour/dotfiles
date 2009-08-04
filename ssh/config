@@ -1,4 +1,17 @@
-Host example
-  HostName example.com
-  User my_username
+Host  wishbed
+  User  jimmy
+  Hostname  wishbed.autrementprive.com
+
+Host  ubiklab
+  User  jimmy
+  Hostname  ns1.ubik-lab.com
+
+Host  neomarco, niccolo
+  User  jimmy
+  Hostname  niccolo.neomarco.com
+
+Host  yoda
+  User  jimmy
+  Hostname  fbx1.laboate.net
+  Port  9022
 
