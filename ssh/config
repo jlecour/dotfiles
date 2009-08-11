@@ -6,7 +6,7 @@ Host  ubiklab
   User  jimmy
   Hostname  ns1.ubik-lab.com
 
-Host  neomarco, niccolo
+Host  neomarco niccolo
   User  jimmy
   Hostname  niccolo.neomarco.com
 

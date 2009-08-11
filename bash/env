@@ -6,7 +6,11 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=~/bin:$PATH
  
+export CDPATH=~:~/Sites
+ 
 export MANPATH=/usr/local/man:$MANPATH
+export MANPATH=/usr/local/mysql/man:$MANPATH
+export MANPATH=/opt/local/man:$MANPATH
 export MANPATH=/opt/local/man:$MANPATH
  
 export SVN_EDITOR='mate -w'
