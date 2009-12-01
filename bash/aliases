@@ -107,6 +107,11 @@ function new-git() {
   git config branch.master.merge refs/heads/master
   git config push.default current
 }
+function gom() {
+  for file in $(git status | sed -n '/.*modified: */s///p'); do
+    mate $file
+  done
+}
 
 # Ruby
 alias r="rake"
