@@ -1,15 +1,15 @@
-export PATH=/usr/local/mysql/bin:$PATH
-export PATH=/usr/local/mongodb/bin:$PATH
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=~/bin:$PATH
+# export PATH=/usr/local/mysql/bin:$PATH
+# export PATH=/usr/local/mongodb/bin:$PATH
+# export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+# export PATH=~/bin:$PATH
 
 # Pour utilisation avec Homebrew, installé dans /usr/local
 # export GEM_HOME=/usr/local/Cellar/Gems/1.8
  
 export CDPATH=~:~/Sites
  
-export MANPATH=/usr/local/man:$MANPATH
-export MANPATH=/usr/local/mysql/man:$MANPATH
+# export MANPATH=/usr/local/man:$MANPATH
+# export MANPATH=/usr/local/mysql/man:$MANPATH
  
 export SVN_EDITOR='mate -w'
 export GIT_EDITOR='mate -w'
