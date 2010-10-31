@@ -1,1 +1,4 @@
 source ~/bin/dotfiles/bash/aliases
+
+# Wrap git with hub (http://github.com/defunkt/hub)
+function git(){hub "$@"}
