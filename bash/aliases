@@ -1,20 +1,27 @@
 # Command Enhancements
 
+# Open man pages in Preview
+function pman() {
+  man -t "${1}" | open -f -a /Applications/Preview.app
+}
+
 # Utility
 alias reload='source ~/bin/dotfiles/bash/aliases'
-alias ea='mate -w ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee="mate ~/bin/dotfiles/bash/env"
+# alias ea='mate -w ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+# alias ee="mate ~/bin/dotfiles/bash/env"
+
+alias tmproj='open ./*.tmproj'
 
 # Quicker cd
-alias cg='cd /Library/Ruby/Gems/1.8/gems/'
-function cs() {
- cd ~/Sites/$*
-}
+# alias cg='cd /Library/Ruby/Gems/1.8/gems/'
+# function cs() {
+#  cd ~/Sites/$*
+# }
 
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
 alias la="ls -A -l -G"
-alias c='clear'
+# alias c='clear'
 alias cdd='cd -'  # goto last dir cd'ed from
 alias cl='clear; l'
 function cdc() { 
@@ -23,33 +30,38 @@ function cdc() {
 alias cls='clear; ls'
 alias h='history'
 alias l.='ls -d .[^.]*'
-alias l='ls -lhGt'  # -l long listing, most recent first
-                    # -G color
+# alias l='ls -lhGt'  # -l long listing, most recent first
+#                     # -G color
+
+
 alias lh="ls -lh"
-alias ll='ls -lhG'  # -l long listing, human readable, no group info
+# alias ll='ls -lhG'  # -l long listing, human readable, no group info
+alias ll='tree -L 1 -C -h'
 alias lt='ls -lt' # sort with recently modified first
-alias md='mkdir -p'
-alias s='cd ..'   # up one dir
+# alias md='mkdir -p'
+# alias s='cd ..'   # up one dir
 
 function take() { 
     mkdir -p "$1"
     cd "$1" 
 }
 
-alias e='exit'
-alias k9="killall -9"
-function killnamed () { 
-    ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill 
-}
-function zipr() {
-  zip -r $1.zip $1
-}
+# alias e='exit'
+# alias k9="killall -9"
+# function killnamed () { 
+#     ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill 
+# }
+# function zipr() {
+#   zip -r $1.zip $1
+# }
 
 # Finder
 alias o='open . &'
 alias ff='open -a Firefox'
 
 # General code
+
+alias myip='curl -B http://whatismyip.org/'
 
 # From Chris Wanstrath
 # function pless() { 
@@ -68,31 +80,34 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
-# Commit pending changes and quote all args as message
-function gg() { 
-    git commit -v -a -m "$*"
-}
+# alias gcp="git commit -v --author='JLecour & MrMoins <dev+jlecour+mrmoins@autrementlemail.com>'"
+# alias gcap="git commit -v -a --author='JLecour & MrMoins <dev+jlecour+mrmoins@autrementlemail.com>'"
+# # Commit pending changes and quote all args as message
+# function gg() { 
+#     git commit -v -a -m "$*"
+# }
 alias gco='git checkout'
-alias gd='git diff -u --ignore-all-space | mate'
-alias gdm='git diff -u master'
+alias gd='git diff -u | mate'
+alias gdw='git diff --word-diff'
+alias gdm='git diff -u master | mate'
 alias gl='git pull'
 alias gnp="git-notpushed"
 alias gp='git push'
 alias gst='git status'
-alias gt='git status'
-alias g='git status'
+alias g='git status -sb'
 alias gk='gitk --all &'
-alias gx='gitx --all'
+alias gx='gitx'
 alias eg='mate .git/config'
-# Git clone from GitHub
-function gch() {
-  git clone git://github.com/$USER/$1.git
-}
 
-# Setup a tracking branch from [remote] [branch_name]
-function gbt() { 
-  git branch --track $2 $1/$2 && git checkout $2 
-}
+# # Git clone from GitHub
+# function gch() {
+#   git clone git://github.com/$USER/$1.git
+# }
+
+# # Setup a tracking branch from [remote] [branch_name]
+# function gbt() { 
+#   git branch --track $2 $1/$2 && git checkout $2 
+# }
 # Quickly clobber a file and checkout
 function grf() { 
   rm $1
@@ -100,8 +115,8 @@ function grf() {
 }
 # Call from inside an initialized Git repo, with the name of the repo.
 function new-git() {
-  ssh git@example.com "mkdir $1.git && cd $1.git && git --bare init"
-  git remote add origin git@example.com:$1.git
+  ssh git@wishbed.autrementprive.com "mkdir $1.git && cd $1.git && git --bare init"
+  git remote add origin git@wishbed.autrementprive.com:$1.git
   git push origin master
   git config branch.master.remote origin
   git config branch.master.merge refs/heads/master
@@ -113,61 +128,61 @@ function gom() {
   done
 }
 
-# Ruby
-alias r="rake"
-
-function markdown() { 
-  /Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html 
-}
+# # Ruby
+# alias r="rake"
+# 
+# function markdown() { 
+#   /Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html 
+# }
 
 # Rails
 alias rp='touch tmp/restart.txt'
 alias sc='./script/console'
-alias sg='./script/generate'
-alias sp='./script/plugin'
-alias ss='./script/server'
+# alias sg='./script/generate'
+# alias sp='./script/plugin'
+# alias ss='./script/server'
 alias tl='tail -f log/*.log'
 
-# TDD / BDD
-
-alias aa='autotest'
-alias aaf='autotest -f' # Don't run all at start
-alias aas="./script/autospec"
-
-# From http://github.com/suztomo/dotfiles
-function rmf(){
-    for file in $*
-    do
-        __rm_single_file $file
-    done
-}
-
-function __rm_single_file(){
-    if ! [ -d ~/.Trash/ ]
-    then
-        command /bin/mkdir ~/.Trash
-    fi
-
-    if ! [ $# -eq 1 ]
-    then
-        echo "__rm_single_file: 1 argument required but $# passed."
-        exit
-    fi
-
-    if [ -e $1 ]
-    then
-        BASENAME=`basename $1`
-        NAME=$BASENAME
-        COUNT=0
-        while [ -e ~/.Trash/$NAME ]
-        do
-            COUNT=$(($COUNT+1))
-            NAME="$BASENAME.$COUNT"
-        done
-
-        command /bin/mv $1 ~/.Trash/$NAME
-    else
-        echo "No such file or directory: $file"
-    fi
-}
+# # TDD / BDD
+# 
+# alias aa='autotest'
+# alias aaf='autotest -f' # Don't run all at start
+# alias aas="./script/autospec"
+# 
+# # From http://github.com/suztomo/dotfiles
+# function rmf(){
+#     for file in $*
+#     do
+#         __rm_single_file $file
+#     done
+# }
+# 
+# function __rm_single_file(){
+#     if ! [ -d ~/.Trash/ ]
+#     then
+#         command /bin/mkdir ~/.Trash
+#     fi
+# 
+#     if ! [ $# -eq 1 ]
+#     then
+#         echo "__rm_single_file: 1 argument required but $# passed."
+#         exit
+#     fi
+# 
+#     if [ -e $1 ]
+#     then
+#         BASENAME=`basename $1`
+#         NAME=$BASENAME
+#         COUNT=0
+#         while [ -e ~/.Trash/$NAME ]
+#         do
+#             COUNT=$(($COUNT+1))
+#             NAME="$BASENAME.$COUNT"
+#         done
+# 
+#         command /bin/mv $1 ~/.Trash/$NAME
+#     else
+#         echo "No such file or directory: $file"
+#     fi
+# }
 
