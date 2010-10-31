@@ -1,0 +1,5 @@
+[client]
+user=mycheckpoint
+password=
+socket=/tmp/mysql.sock
+host=localhost
