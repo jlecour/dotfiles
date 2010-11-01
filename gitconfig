@@ -5,6 +5,7 @@
 	branch = auto
 	status = auto
 	diff = auto
+	interactive = auto
 [merge]
 	tool = opendiff
 [github]
