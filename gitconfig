@@ -12,5 +12,5 @@
 	user = jlecour
 	token = 9af8bb34e4cf55d39f85748b99539375
 [core]
-	editor = mate -w
+	editor = mate -wl1
 	autocrlf = input

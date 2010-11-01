@@ -11,8 +11,8 @@
 # export MANPATH=/usr/local/man:$MANPATH
 # export MANPATH=/usr/local/mysql/man:$MANPATH
  
-export SVN_EDITOR='mate -w'
-export GIT_EDITOR='mate -w'
+export SVN_EDITOR='mate -wl1'
+export GIT_EDITOR='mate -wl1'
 export DIFF_EDITOR='mate -w'
 export LESSEDIT='mate -l %lm %f'
 export EDITOR='mate_wait'
