@@ -142,6 +142,7 @@ alias sc='./script/console'
 # alias sp='./script/plugin'
 # alias ss='./script/server'
 alias tl='tail -f log/*.log'
+alias berc='bundle exec rails console'
 
 # # TDD / BDD
 # 
