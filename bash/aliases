@@ -137,12 +137,27 @@ function gom() {
 
 # Rails
 alias rp='touch tmp/restart.txt'
-alias sc='./script/console'
-# alias sg='./script/generate'
-# alias sp='./script/plugin'
-# alias ss='./script/server'
+function sc(){
+  if [ -x './script/console' ]
+  then
+    command ./script/console $*
+  elif [ -f './Gemfile' ]
+  then
+    command bundle exec rails console $*
+  else
+    echo "No Rails console found"
+  fi
+}
+function sg(){
+  if [ -x './script/generate' ]
+  then
+    command ./script/generate $*
+  else
+    command bundle exec rails generate $*
+  fi
+}
+alias ss='passenger start'
 alias tl='tail -f log/*.log'
-alias berc='bundle exec rails console'
 
 # # TDD / BDD
 # 
