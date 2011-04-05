@@ -137,27 +137,72 @@ function gom() {
 
 # Rails
 alias rp='touch tmp/restart.txt'
-function sc(){
-  if [ -x './script/console' ]
+function rc(){
+  if [ -f './Gemfile' ]
+  then
+    if [ -x './script/console' ]
+    then
+      command bundle exec ./script/console $*
+    else
+      command bundle exec rails console $*
+    fi
+  elif [ -x './script/console' ]
   then
     command ./script/console $*
-  elif [ -f './Gemfile' ]
-  then
-    command bundle exec rails console $*
   else
     echo "No Rails console found"
   fi
 }
-function sg(){
-  if [ -x './script/generate' ]
+function rg(){
+  if [ -f './Gemfile' ]
+  then
+    if [ -x './script/generate' ]
+    then
+      command bundle exec ./script/generate $*
+    else
+      command bundle exec rails generate $*
+    fi
+  elif [ -x './script/generate' ]
   then
     command ./script/generate $*
   else
-    command bundle exec rails generate $*
+    echo "No Rails console found"
   fi
 }
 alias ss='passenger start'
 alias tl='tail -f log/*.log'
+function to_staging(){
+  if [ -x './script/to_staging' ]
+  then
+    command ./script/to_staging
+  else
+    echo "Script 'to_staging' not found"
+  fi
+}
+function to_master(){
+  if [ -x './script/to_master' ]
+  then
+    command ./script/to_master
+  else
+    echo "Script 'to_master' not found"
+  fi
+}
+function to_production(){
+  if [ -x './script/to_production' ]
+  then
+    command ./script/to_production
+  else
+    echo "Script 'to_production' not found"
+  fi
+}
+function to_dev(){
+  if [ -x './script/to_dev' ]
+  then
+    command ./script/to_dev
+  else
+    echo "Script 'to_dev' not found"
+  fi
+}
 
 # # TDD / BDD
 # 
