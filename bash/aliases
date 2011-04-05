@@ -57,7 +57,6 @@ function take() {
 
 # Finder
 alias o='open . &'
-alias ff='open -a Firefox'
 
 # General code
 
@@ -246,4 +245,43 @@ function to_dev(){
 #         echo "No such file or directory: $file"
 #     fi
 # }
+
+# Firefox wrappers
+function ff4(){
+  bin='/Applications/Firefox 4.app/Contents/MacOS/firefox-bin'
+  if [ -x $bin ]
+  then
+    $bin -P 'FF4' $*
+  else
+    echo "Firefox 4 non trouvé"
+  fi
+}
+function ff36(){
+  bin='/Applications/Firefox 3-6.app/Contents/MacOS/firefox-bin'
+  if [ -x $bin ]
+  then
+    $bin -P 'FF36' $* &
+  else
+    echo "Firefox 3.6 non trouvé"
+  fi
+}
+function ff3(){
+  bin='/Applications/Firefox 3.app/Contents/MacOS/firefox-bin'
+  if [ -x $bin ]
+  then
+    $bin -P 'FF3' $* &
+  else
+    echo "Firefox 3 non trouvé"
+  fi
+}
+
+function ff2(){
+  bin='/Applications/Firefox 2.app/Contents/MacOS/firefox-bin'
+  if [ -x $bin ]
+  then
+    $bin -P 'FF2' $* &
+  else
+    echo "Firefox 2 non trouvé"
+  fi
+}
 
