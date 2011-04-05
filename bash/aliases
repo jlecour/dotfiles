@@ -1,5 +1,7 @@
 # Command Enhancements
 
+alias sad='afplay ~/bin/dotfiles/sad_trombone.mp3 > /dev/null 2>&1 &'
+
 # Open man pages in Preview
 function pman() {
   man -t "${1}" | open -f -a /Applications/Preview.app
