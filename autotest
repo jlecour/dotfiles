@@ -1,8 +1,17 @@
-require 'autotest/fsevent'
-require 'autotest/growl'
-
-
-Autotest.add_hook :initialize do |autotest|
-  %w{.git .svn .hg .DS_Store ._* vendor}.each {|exception| autotest.add_exception(exception) }
-  false
-end
+# require 'autotest/fsevent'
+# require 'autotest/growl'
+# require 'autotest/bundler'
+# require 'redgreen'
+# 
+# Autotest.add_hook :initialize do |at|
+#   %w{.git .svn .hg .DS_Store ._* vendor Gemfile.lock .rvmrc}.each do |ex|
+#     at.add_exception(ex)
+#   end
+# 
+#   at.remove_mapping(/^lib\/.*\.rb$/)
+#   at.add_mapping(%r%^lib/(.*).rb%) do |filename, m|
+#     at.files_matching %r%^test/lib/.*_test.rb$%
+#   end
+# 
+#   at.add_mapping(%r%^test/lib/.*\.rb$%) {|filename, _| filename}
+# end
