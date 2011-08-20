@@ -1,16 +1,20 @@
 [user]
-	name = Jeremy Lecour
+	name = Jérémy Lecour
 	email = jeremy.lecour@gmail.com
 [color]
 	branch = auto
 	status = auto
 	diff = auto
 	interactive = auto
-[merge]
-	tool = opendiff
+	decorate = auto
+	grep = auto
+	ui = true
 [github]
 	user = jlecour
 	token = 9af8bb34e4cf55d39f85748b99539375
 [core]
 	editor = mate -wl1
 	autocrlf = input
+[help]
+  browser = open
+  format = html

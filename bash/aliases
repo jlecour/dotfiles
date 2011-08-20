@@ -1,3 +1,14 @@
+# servers
+
+alias redis_start='launchctl load -w "$HOME/Library/LaunchAgents/io.redis.redis-server.plist"'
+alias redis_stop='launchctl unload -w "$HOME/Library/LaunchAgents/io.redis.redis-server.plist"'
+
+alias mongodb_start='launchctl load -w "$HOME/Library/LaunchAgents/org.mongodb.mongod.plist"'
+alias mongodb_stop='launchctl unload -w "$HOME/Library/LaunchAgents/org.mongodb.mongod.plist"'
+
+alias mysql_start='launchctl load -w "$HOME/Library/LaunchAgents/com.mysql.mysqld.plist"'
+alias mysql_stop='launchctl unload -w "$HOME/Library/LaunchAgents/com.mysql.mysqld.plist"'
+
 # Command Enhancements
 
 alias sad='afplay ~/bin/dotfiles/sad_trombone.mp3 > /dev/null 2>&1 &'
@@ -87,10 +98,11 @@ alias gca='git commit -v -a'
 # function gg() { 
 #     git commit -v -a -m "$*"
 # }
+
 alias gco='git checkout'
-alias gd='git diff -u | mdr'
+function gd() { command git diff --patience "$@" | mdr; }
+# alias gd='git diff -u'
 alias gdw='git diff --word-diff'
-alias gdm='git diff -u master | mdr'
 alias gl='git pull'
 alias gnp="git-notpushed"
 alias gp='git push'
@@ -204,6 +216,9 @@ function to_dev(){
     echo "Script 'to_dev' not found"
   fi
 }
+
+alias resque_work="RAILS_ENV=development QUEUE=\* VERBOSE=1 rake environment resque:work"
+
 
 # # TDD / BDD
 # 

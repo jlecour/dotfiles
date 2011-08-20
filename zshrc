@@ -1,6 +1,5 @@
 . ~/bin/dotfiles/zsh/config
 . ~/bin/dotfiles/zsh/aliases
 . ~/bin/dotfiles/zsh/env
-. ~/bin/dotfiles/zsh/git-flow-completion
 
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+[[ -s "/Users/jlecour/.rvm/scripts/rvm" ]] && source "/Users/jlecour/.rvm/scripts/rvm"  # This loads RVM into a shell session.
