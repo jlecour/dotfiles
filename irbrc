@@ -30,3 +30,15 @@
 # rescue LoadError => err
 #   warn "Couldn't load awesome_print: #{err}"
 # end
+
+def pbcopy(str)
+  IO.popen('pbcopy', 'w') { |f| f << str.to_s }
+end
+
+def pbpaste
+  `pbpaste`
+end
+
+def ep
+  eval(pbpaste)
+end
