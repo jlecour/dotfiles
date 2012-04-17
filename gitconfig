@@ -1,14 +1,22 @@
+[core]
+  repositoryformatversion = 0
+  filemode = true
+  bare = false
+  logallrefupdates = true
+  ignorecase = true
+  editor = mate -wl1
+  autocrlf = input
 [user]
-	name = Jérémy Lecour
-	email = jeremy.lecour@gmail.com
+  name = Jérémy Lecour
+  email = jeremy.lecour@gmail.com
 [color]
-	branch = auto
-	status = auto
-	diff = auto
-	interactive = auto
-	decorate = auto
-	grep = auto
-	ui = true
+  branch = auto
+  status = auto
+  diff = auto
+  interactive = auto
+  decorate = auto
+  grep = auto
+  ui = true
 [github]
 	user = jlecour
 	token = 9af8bb34e4cf55d39f85748b99539375
@@ -18,3 +26,7 @@
 [help]
   browser = open
   format = html
+[push]
+  default = upstream
+[apply]
+  whitespace = nowarn
