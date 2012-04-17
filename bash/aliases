@@ -55,8 +55,8 @@ alias l.='ls -d .[^.]*'
 
 
 alias lh="ls -lh"
-# alias ll='ls -lhG'  # -l long listing, human readable, no group info
-alias ll='tree -L 1 -C -h'
+alias ll='ls -lhG'  # -l long listing, human readable, no group info
+# alias ll='tree -L 1 -C -h'
 alias lt='ls -lt' # sort with recently modified first
 # alias md='mkdir -p'
 # alias s='cd ..'   # up one dir
