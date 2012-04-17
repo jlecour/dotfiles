@@ -76,7 +76,7 @@ function take() {
 # }
 
 # Finder
-alias o='open . &'
+alias o='open .'
 
 # General code
 
