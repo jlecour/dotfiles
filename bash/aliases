@@ -1,3 +1,5 @@
+alias pomodoro='ruby /usr/local/share/scripts/pomodoro.rb/pomodoro.rb'
+
 # servers
 
 alias redis_start='launchctl load -w "$HOME/Library/LaunchAgents/io.redis.redis-server.plist"'
