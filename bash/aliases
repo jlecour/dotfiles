@@ -1,5 +1,7 @@
 alias pomodoro='ruby /usr/local/share/scripts/pomodoro.rb/pomodoro.rb'
 
+alias dotfiles='mate ~/.dotfiles/'
+
 # servers
 
 alias pow_start='launchctl load -w ~/Library/LaunchAgents/cx.pow.powd.plist'
