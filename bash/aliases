@@ -31,7 +31,8 @@ alias solr_start='(cd ~/Sites/jetty && java -jar start.jar)'
 
 # Command Enhancements
 
-alias sad='afplay ~/bin/dotfiles/sad_trombone.mp3 > /dev/null 2>&1 &'
+alias sad='afplay -v 3 ~/.dotfiles/sad_trombone.mp3 > /dev/null 2>&1 &'
+alias rimshot='afplay -v 3 ~/.dotfiles/rimshot.mp3 > /dev/null 2>&1 &'
 
 # Open man pages in Preview
 function pman() {
