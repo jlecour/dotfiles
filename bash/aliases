@@ -4,17 +4,22 @@ alias dotfiles='mate ~/.dotfiles/'
 
 # servers
 
+alias elasticsearch_start='launchctl load -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist'
+alias elasticsearch_stop='launchctl unload -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist'
+
 alias pow_start='launchctl load -w ~/Library/LaunchAgents/cx.pow.powd.plist'
 alias pow_stop='launchctl unload -w ~/Library/LaunchAgents/cx.pow.powd.plist'
 
-alias redis_start='launchctl load -w ~/Library/LaunchAgents/hh{1,2,3,4}.autrement.redis.plist'
-alias redis_stop='launchctl unload -w ~/Library/LaunchAgents/hh{1,2,3,4}.autrement.redis.plist'
+alias redis_start='launchctl load -w ~/Library/LaunchAgents/hh{1,2,3,4,5}.autrement.redis.plist'
+alias redis_stop='launchctl unload -w ~/Library/LaunchAgents/hh{1,2,3,4,5}.autrement.redis.plist'
 
 alias mongodb_start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
 alias mongodb_stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
 
-alias mysql_start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist'
-alias mysql_stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist'
+# alias mysql_start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist'
+# alias mysql_stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist'
+alias mysql_start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.percona-server.plist'
+alias mysql_stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.percona-server.plist'
 
 alias memcached_start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist'
 alias memcached_stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist'
@@ -22,7 +27,7 @@ alias memcached_stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.m
 alias servers_start='pow_start; redis_start; mongodb_start; mysql_start; memcached_start'
 alias servers_stop='pow_stop; redis_stop; mongodb_stop; mysql_stop; memcached_stop'
 
-alias solr_start='cd ~/Sites/jetty && java -jar start.jar'
+alias solr_start='(cd ~/Sites/jetty && java -jar start.jar)'
 
 # Command Enhancements
 
