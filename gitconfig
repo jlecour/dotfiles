@@ -9,6 +9,8 @@
 [user]
   name = Jérémy Lecour
   email = jeremy.lecour@gmail.com
+[credential]
+  helper = osxkeychain
 [color]
   branch = auto
   status = auto
@@ -17,16 +19,40 @@
   decorate = auto
   grep = auto
   ui = true
-[github]
-	user = jlecour
-	token = 9af8bb34e4cf55d39f85748b99539375
-[core]
-	editor = mate -wl1
-	autocrlf = input
 [help]
   browser = open
   format = html
 [push]
-  default = upstream
+  default = simple
+[pull]
+	rebase = true
 [apply]
   whitespace = nowarn
+[rebase]
+  autosquash = true
+[include]
+  path = .githubconfig
+[alias]
+  a = add
+  aa = add -A .
+  b = branch
+  ba = branch -a
+  c = commit -v
+  ca = commit -v -a
+  ; cp = commit -v --author='JLecour & Madx <dev+jlecour+madx@autrementlemail.fr>'
+  ; cap = commit -v -a --author='JLecour & Madx <dev+jlecour+madx@autrementlemail.fr>'
+  co = checkout
+  d = diff --ignore-space-change --patience --no-prefix
+  dw = diff --word-diff
+  l = pull
+  f = fetch
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  bb = backup-branch
+  cane = commit --amend --no-edit
+  rf = !sh -c 'rm $1 && git checkout $1'
+  s = status -s -b
+  pair = credit "JLecour & Madx" dev+jlecour+madx@autrementlemail.fr
+  x = !gitx
+  resolve = !sh -c 'git conflicts && $EDITOR $(git conflicts) +\"/<<<<\"'
+  conflicts = !sh -c 'git status -sb | grep ^UU | sed "s/UU\\ //"'
+
