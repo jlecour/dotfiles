@@ -1,9 +1,13 @@
 autoload -U colors && colors
 setopt prompt_subst
-PROMPT='%~ %{$fg_bold[blue]%}[$(~/.rvm/bin/rvm-prompt s i v g)]%{$fg_bold[green]%}$(vcprompt)%{$reset_color%}
+PROMPT='%~ %{$fg_bold[blue]%}[$(rbenv version-name)]%{$fg_bold[green]%}$(vcprompt)%{$reset_color%}
 → '
 
+# PROMPT='%~ %{$fg_bold[green]%}$(vcprompt)%{$reset_color%}
+# → '
+
 # Set RPROMPT to have info show up on the right, too.
+# RPROMPT='%{$fg_bold[blue]%}[$(rbenv version-name)]%{$fg_bold[green]%}$(vcprompt)%{$reset_color%}'
 
 #############################
 # Other Options
@@ -46,3 +50,5 @@ WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
 
 bindkey -e
 
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
