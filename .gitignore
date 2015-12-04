@@ -1,2 +1,4 @@
 ssh/config
 .DS_Store
+githubconfig
+gem/credentials
