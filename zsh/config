@@ -1,10 +1,10 @@
 autoload -U colors && colors
 setopt prompt_subst
-PROMPT='%~ %{$fg_bold[blue]%}[$(rbenv version-name)]%{$fg_bold[green]%}$(vcprompt)%{$reset_color%}
-→ '
 
 # PROMPT='%~ %{$fg_bold[green]%}$(vcprompt)%{$reset_color%}
 # → '
+
+PROMPT='%~ → '
 
 # Set RPROMPT to have info show up on the right, too.
 # RPROMPT='%{$fg_bold[blue]%}[$(rbenv version-name)]%{$fg_bold[green]%}$(vcprompt)%{$reset_color%}'
@@ -15,7 +15,7 @@ PROMPT='%~ %{$fg_bold[blue]%}[$(rbenv version-name)]%{$fg_bold[green]%}$(vcpromp
 # setopt PRINT_EXIT_VALUE
 
 setopt CORRECT
-setopt CORRECTALL
+# setopt CORRECTALL
 
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
