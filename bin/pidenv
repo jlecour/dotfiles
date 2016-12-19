@@ -1,0 +1,4 @@
+#!/bin/sh
+
+pid="$1"
+tr '\000' '\n' < /proc/$pid/environ
