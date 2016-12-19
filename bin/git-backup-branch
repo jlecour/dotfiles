@@ -3,6 +3,10 @@
 set -e
 
 CURRENT=`git branch | grep '\*' | awk '{print $2}'`
-REMOTE=${1:-'origin'}
+DEFAULT_REMOTE=$(git remote | grep backup || echo origin)
+REMOTE=${1:-$DEFAULT_REMOTE}
+BRANCH=${USER}/${CURRENT}
 
-git push --force ${REMOTE} ${CURRENT}:backup/${USER}/${CURRENT}
+test $DEFAULT_REMOTE != 'backup' && BRANCH=backup/${BRANCH}
+
+git push --force ${REMOTE} ${CURRENT}:${BRANCH}
