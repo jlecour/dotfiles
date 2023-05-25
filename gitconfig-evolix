@@ -1,0 +1,70 @@
+[core]
+  repositoryformatversion = 0
+  filemode = true
+  bare = false
+  logallrefupdates = true
+  ignorecase = true
+  editor = vim 
+  autocrlf = input
+[user]
+	name = Jérémy Lecour
+	email = jlecour@evolix.fr
+[credential]
+[color]
+  branch = auto
+  status = auto
+  diff = auto
+  interactive = auto
+  decorate = auto
+  grep = auto
+  ui = true
+[help]
+  browser = firefox
+  format = html
+[push]
+  default = simple
+[pull]
+  rebase = true
+[apply]
+  whitespace = nowarn
+[rebase]
+  autosquash = true
+  autoStash = true
+[include]
+  path = .githubconfig
+[alias]
+  a = add
+  aa = add -A .
+  b = branch
+  ba = branch -a
+  c = commit -v
+  ca = commit -v -a
+  ; cp = commit -v --author='JLecour & Madx <dev+jlecour+madx@autrementlemail.fr>'
+  ; cap = commit -v -a --author='JLecour & Madx <dev+jlecour+madx@autrementlemail.fr>'
+  co = checkout
+  d = diff --ignore-space-change --patience --no-prefix
+  dw = diff --word-diff
+  l = pull
+  f = fetch
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  bb = backup-branch
+  cane = commit --amend --no-edit
+  rf = !sh -c 'rm $1 && git checkout $1'
+  s = status -s -b
+  x = !gitx
+  resolve = !sh -c 'git conflicts && $EDITOR $(git conflicts) +\"/<<<<\"'
+  conflicts = !sh -c 'git status -sb | grep ^UU | sed "s/UU\\ //"'
+[diff "ansible-vault"]
+  textconv = ansible-vault view
+  cachetextconv = false
+
+[identity "evolix"]
+  name = Jérémy Lecour
+  email = jlecour@evolix.fr
+[merge]
+	ff = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
